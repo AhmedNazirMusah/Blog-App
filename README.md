@@ -84,6 +84,9 @@ Clone this repository to your desired folder:
 ```sh
   cd my-folder
   git clone git@github.com:myaccount/my-project.git
+  bundle install
+  rails db:create 
+  rails db:migrate
 ```
 
 ### Install
@@ -92,7 +95,6 @@ Install this project with:
 
 ```sh
   cd my-project
-  gem install
 ```
 
 
@@ -110,7 +112,7 @@ To run tests, run the following command:
 
 
 ```sh
-  bin/rails test test/models/article_test.rb
+rspec
 ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
