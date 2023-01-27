@@ -1,11 +1,4 @@
-<div class="user-card">
-  <div></div>
-  <div>
-    <h2><%= @single_user.name %></h2> 
-    <span>Number Of Posts: <%= @single_user.post_counter %></span>
-  </div>
-</div>
-
+<%= render "shared/user"%> 
 <div>
   <% @user_posts.each.with_index(1) do |post, index|%>
     <a class="user-link" href="/users/<%= @single_user.id %>/posts/<%= post.id %>">
