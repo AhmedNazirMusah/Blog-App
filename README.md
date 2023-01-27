@@ -15,6 +15,7 @@
   - [Run tests](#run-tests)
 (#triangular_flag_on_post-deployment)
 - [👥 Authors](#authors)
+- [🔭 Future Features](#future-features)
 - [🤝 Contributing](#contributing)
 - [⭐️ Show your support](#support)
 - [🙏 Acknowledgements](#acknowledgements)
@@ -130,6 +131,10 @@ rspec
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+### Future Features <a name="key-features"></a>
+
+- **Forms**
+- **Authentication**
 
 
 ## 🤝 Contributing <a name="contributing"></a>
