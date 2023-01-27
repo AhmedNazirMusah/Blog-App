@@ -1,16 +1,18 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>BlogApp</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+<div>
+  <h2>
+    <%= @single_post.title %> by <%= @single_post.author.name %>
+  </h2>
+  <span>
+    Comments: <%= @single_post.comments_counter %>
+    Likes: <%= @single_post.likes_counter %>
+  </span>
+  <p>
+    <%= @single_post.text %>
+  </p>
+</div>
 
-    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
-    <%= javascript_importmap_tags %>
-  </head>
-
-  <body class="body">
-    <h1>Show method for posts</h1>
-  </body>
-</html>
+<div class="post-comment">
+  <% @post_comments.each do |comment| %>
+    <span><%= comment.author.name %>: <%= comment.text %></span> 
+  <% end %>
+</div>
