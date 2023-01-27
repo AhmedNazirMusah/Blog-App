@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   root "users#index"
   get "users/:id" => "users#show"
-  get "users/:user_id/posts" => "posts#index"
-  get "users/:user_id/posts/:id" => "posts#show"
+  get "users/:user_id/posts" => "posts#index", as: :users_posts
+  get "users/:user_id/posts/:id" => "posts#show", as: :users_posts_id
  
 end

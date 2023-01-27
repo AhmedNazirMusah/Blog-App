@@ -22,4 +22,4 @@
    
 </div>
 <% end %>
-<a class="btn" href="/users/<%= @single_user.id %>/posts">See all posts</a>
+<%= link_to "See all Posts", users_posts_path(@single_user.id)%>

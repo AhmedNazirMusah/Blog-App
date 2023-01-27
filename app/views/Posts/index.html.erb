@@ -1,10 +1,9 @@
 <%= render "shared/user"%> 
 <div>
   <% @user_posts.each.with_index(1) do |post, index|%>
-    <a class="user-link" href="/users/<%= @single_user.id %>/posts/<%= post.id %>">
     <div class="d-1">
       <div>
-        <p>Post <%= index %></p>
+        <p><%= link_to post.class, users_posts_id_path(@single_user.id, post.id)%> <%= index %></p>
         <h3>Title: <%= post.title %></h3>
         <p><%= post.text %></p>
         <span>
@@ -19,6 +18,6 @@
         <% end %>
       </div>
     </div>
-    </a>
+
   <% end %>
 </div>
