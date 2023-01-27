@@ -1,16 +1,28 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>BlogApp</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+<div class="user-card">
+  <div class="img-plch"></div>
+  <div class="user-detls">
+    <h2><%= @single_user.name %></h2> 
+    <span>Number Of Posts: <%= @single_user.post_counter %></span>
+  </div>
+</div>
 
-    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
-    <%= javascript_importmap_tags %>
-  </head>
+<div class="user-bio">
+  <h3>Bio:</h3>
+  <p>
+    <%= @single_user.bio %>
+  </p>
+</div>
 
-  <body class="body">
-    <h1>Show method for User</h1>
-  </body>
-</html>
+<div>
+  <% @user_posts.each do |post| %>
+    <div class="post-card box">
+      <h3><%= post.title %></h3>
+      <p><%= post.text %></p>
+      <span>
+        Comments: <%= post.comments_counter %>
+        Likes: <%= post.likes_counter %>
+      </span>
+    </div>
+  <% end %>
+</div>
+<a class="btn" href="/users/<%= @single_user.id %>/posts">See all posts</a>
