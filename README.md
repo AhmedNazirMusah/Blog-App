@@ -104,7 +104,25 @@ Install this project with:
 To run the project, execute the following command:
 
 ```sh
-  rails server
+  cd Blog-app
+  rails c
+  To create users :
+
+ irb(main):001:0> first_user = User.create(name: 'Lilly', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Teacher from Poland.',post_counter: 0)
+  
+  irb(main):001:0> second_user = User.create(name: 'Lilly', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Teacher from Poland.',post_counter: 0) 
+
+  create post :
+  
+  irb(main):001:0> first_post = Post.create(author: first_user, title: 'Hello', text: 'This is my first post',likes_counter:0, comments_counter: 0)
+  
+  create cpmment :
+
+  irb(main):001:0> Comment.create( author: second_user, post: first_post, text: 'Hi Tom!')
+  
+  start server :
+  
+  /Blog-App$ rails crails server
 ```
 
 ### Run tests

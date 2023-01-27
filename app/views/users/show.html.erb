@@ -1,5 +1,5 @@
 <div class="user-card">
-  <div class="img-plch"></div>
+  <div class="img"></div>
   <div class="user-detls">
     <h2><%= @single_user.name %></h2> 
     <span>Number Of Posts: <%= @single_user.post_counter %></span>
@@ -14,15 +14,18 @@
 </div>
 
 <div>
-  <% @user_posts.each do |post| %>
+  <% @user_posts.each.with_index(1) do |post, index|%>
+
     <div class="post-card box">
       <h3><%= post.title %></h3>
+      <p>Post <%= index %></p>
       <p><%= post.text %></p>
       <span>
         Comments: <%= post.comments_counter %>
         Likes: <%= post.likes_counter %>
       </span>
     </div>
-  <% end %>
+   
 </div>
+<% end %>
 <a class="btn" href="/users/<%= @single_user.id %>/posts">See all posts</a>

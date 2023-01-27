@@ -7,10 +7,12 @@
 </div>
 
 <div>
-  <% @user_posts.each do |post| %>
-    <div>
+  <% @user_posts.each.with_index(1) do |post, index|%>
+    <a class="user-link" href="/users/<%= @single_user.id %>/posts/<%= post.id %>">
+    <div class="d-1">
       <div>
-        <h3><%= post.title %></h3>
+        <p>Post <%= index %></p>
+        <h3>Title: <%= post.title %></h3>
         <p><%= post.text %></p>
         <span>
           Comments: <%= post.comments_counter %>
@@ -18,10 +20,12 @@
         </span>
       </div>
       <div class="post-comment">
+        <h1>Comments</h1>
         <% post.recent_comments.each do |comment| %>
           <h3><%= comment.author.name %>: <%= comment.text%></h3>
         <% end %>
       </div>
     </div>
+    </a>
   <% end %>
 </div>

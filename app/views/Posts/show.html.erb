@@ -12,7 +12,8 @@
 </div>
 
 <div class="post-comment">
+  <h1>comments</h1>
   <% @post_comments.each do |comment| %>
-    <span><%= comment.author.name %>: <%= comment.text %></span> 
+    <h4><%= comment.author.name %>: <%= comment.text %></h4> 
   <% end %>
 </div>

@@ -37,3 +37,8 @@ span {
   display: flex;
   flex-direction: column;
 }
+
+.d-1 {
+  background: antiquewhite;
+  margin-bottom: 10px;
+}
