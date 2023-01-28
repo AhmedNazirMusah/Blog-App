@@ -17,3 +17,8 @@
     <h4><%= comment.author.name %>: <%= comment.text %></h4> 
   <% end %>
 </div>
+<div>
+<button>
+  <%= link_to 'Write a comment', new_user_post_comment_path(@user.id, @single_post.id) %>
+</button>
+</div>
