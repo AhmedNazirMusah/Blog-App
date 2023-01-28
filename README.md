@@ -15,6 +15,7 @@
   - [Run tests](#run-tests)
 (#triangular_flag_on_post-deployment)
 - [👥 Authors](#authors)
+- [🔭 Future Features](#future-features)
 - [🤝 Contributing](#contributing)
 - [⭐️ Show your support](#support)
 - [🙏 Acknowledgements](#acknowledgements)
@@ -84,6 +85,9 @@ Clone this repository to your desired folder:
 ```sh
   cd my-folder
   git clone git@github.com:myaccount/my-project.git
+  bundle install
+  rails db:create 
+  rails db:migrate
 ```
 
 ### Install
@@ -92,7 +96,6 @@ Install this project with:
 
 ```sh
   cd my-project
-  gem install
 ```
 
 
@@ -101,7 +104,25 @@ Install this project with:
 To run the project, execute the following command:
 
 ```sh
-  rails server
+  cd Blog-app
+  rails c
+  To create users :
+
+ irb(main):001:0> first_user = User.create(name: 'Lilly', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Teacher from Poland.',post_counter: 0)
+  
+  irb(main):001:0> second_user = User.create(name: 'Lilly', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Teacher from Poland.',post_counter: 0) 
+
+  create post :
+  
+  irb(main):001:0> first_post = Post.create(author: first_user, title: 'Hello', text: 'This is my first post',likes_counter:0, comments_counter: 0)
+  
+  create cpmment :
+
+  irb(main):001:0> Comment.create( author: second_user, post: first_post, text: 'Hi Tom!')
+  
+  start server :
+  
+  /Blog-App$ rails crails server
 ```
 
 ### Run tests
@@ -110,7 +131,7 @@ To run tests, run the following command:
 
 
 ```sh
-  bin/rails test test/models/article_test.rb
+rspec
 ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -128,6 +149,10 @@ To run tests, run the following command:
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+### Future Features <a name="key-features"></a>
+
+- **Forms**
+- **Authentication**
 
 
 ## 🤝 Contributing <a name="contributing"></a>

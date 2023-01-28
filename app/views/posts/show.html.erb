@@ -1,0 +1,19 @@
+<div>
+  <h2>
+    <%= @single_post.title %> by <%= @single_post.author.name %>
+  </h2>
+  <span>
+    Comments: <%= @single_post.comments_counter %>
+    Likes: <%= @single_post.likes_counter %>
+  </span>
+  <p>
+    <%= @single_post.text %>
+  </p>
+</div>
+
+<div class="post-comment">
+  <h1>comments</h1>
+  <% @post_comments.each do |comment| %>
+    <h4><%= comment.author.name %>: <%= comment.text %></h4> 
+  <% end %>
+</div>

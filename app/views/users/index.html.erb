@@ -1,16 +1,11 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>BlogApp</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
-
-    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
-    <%= javascript_importmap_tags %>
-  </head>
-
-  <body class="body">
-    <h1>List of all users</h1>
-  </body>
-</html>
+<% @users.each do |user| %>
+  <a class="user-link" href="/users/<%= user.id%>">
+  <section class="all-users">  
+    <div class="img-holder"><%= user.photo %></div>
+      <div class="user-info">
+        <h2><%= user.name %></h2> 
+        <span>Number Of Posts: <%= user.post_counter %></span>
+      </div>
+    </section>
+  </a>
+<% end %>

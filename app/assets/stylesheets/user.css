@@ -1,0 +1,44 @@
+.user-card {
+  background-color: rgb(210, 205, 214);
+}
+
+.all-users {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-bottom: 30px;
+  color: rgb(0, 0, 0);
+  width: 80%;
+}
+
+.user-info {
+  display: flex;
+  flex-direction: column;
+  width: 47%;
+  padding: 20px;
+  border: 1px solid;
+}
+
+.user-info,
+span {
+  align-self: flex-end;
+}
+
+.img-holder {
+  padding: 53px;
+  border: 2px solid black;
+}
+
+.user-info:hover {
+  background: rgb(239, 212, 212);
+}
+
+.post-comment {
+  display: flex;
+  flex-direction: column;
+}
+
+.d-1 {
+  background: antiquewhite;
+  margin-bottom: 10px;
+}
