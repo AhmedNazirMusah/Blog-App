@@ -7,6 +7,7 @@ class PostsController < ApplicationController
   def show
     @single_post = Post.find(params[:id].to_i)
     @post_comments = Comment.where(post: @single_post)
+    @user = User.find(params[:user_id])
   end
 
   def new
@@ -27,6 +28,6 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:author, :title, :text)
+    params.require(:post).permit(:author, :title, :text, :likes_counter, :comments_counter)
   end
 end
