@@ -1,0 +1,33 @@
+<h1>New Form</h1>
+<%= form_with model: @post, url: user_posts_path, data: {turbo: false} do |form| %>
+    <% if form.object.errors.any? %>
+       <div>
+       <% form.object.errors.full_messages.each do |message| %>
+       <div><%= message %></div>
+       <% end %>
+       </div>
+     <% end %>
+   
+     <div>
+       <div>
+         <%= form.label :title %>
+         <%= form.text_field :title%>
+       </div>
+       <div>
+         <%= form.label :text %>
+         <%= form.text_field :text %>
+       </div>
+
+     <div>
+       <%= form.hidden_field :comments_counter, value: 0 %>
+     </div>
+     
+     <div>
+       <%= form.hidden_field :likes_counter, value: 0 %>
+     </div>
+   
+       <div>
+         <%= form.submit "Create Post"%>
+       </div>
+     </div>
+   <% end %>
