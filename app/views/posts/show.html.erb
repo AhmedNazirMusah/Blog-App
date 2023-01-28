@@ -9,6 +9,9 @@
   <p>
     <%= @single_post.text %>
   </p>
+  <div class="likes">
+  <%= button_to "Like", like_path(:post_id, :current_user), method: "put"%>
+  </div>
 </div>
 
 <div class="post-comment">
@@ -18,6 +21,7 @@
   <% end %>
 </div>
 <div>
+
 <button>
   <%= link_to 'Write a comment', new_user_post_comment_path(@user.id, @single_post.id) %>
 </button>
