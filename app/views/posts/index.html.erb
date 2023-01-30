@@ -3,7 +3,7 @@
   <% @user_posts.each.with_index(1) do |post, index|%>
     <div class="d-1">
       <div>
-        <p><%= link_to post.class, users_posts_id_path(@single_user.id, post.id)%> <%= index %></p>
+        <p><%= link_to post.class, user_post_path(@single_user.id, post.id) %> <%= index %></p>
         <h3>Title: <%= post.title %></h3>
         <p><%= post.text %></p>
         <span>
@@ -20,4 +20,8 @@
     </div>
 
   <% end %>
+</div>
+
+<button>Pagination</button>
+<button><%= link_to 'Create a new post', new_user_post_path(@single_user.id) %></button>
 </div>
