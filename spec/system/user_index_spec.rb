@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe 'Users index page', type: :system do
   before do
     driven_by(:rack_test)
-    @user =  User.create(name: 'Lilly', bio: 'Teacher from Poland.',post_counter: 0)
+    @user = User.create(name: 'Lilly', bio: 'Teacher from Poland.', post_counter: 0)
   end
   it 'should show users names' do
     visit root_path
