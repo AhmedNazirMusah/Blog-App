@@ -9,7 +9,7 @@
   <p>
     <%= @single_post.text %>
   </p>
-  <% if can? :manage, @single_post %>
+  <% if can? :destroy, @single_post %>
   <p><%= button_to 'Delete Post', "/users/#{@user.id}/posts/#{@single_post.id}", method: :delete, form: {  data: { turbo: :false } }%></p>
   <% end %>
 </div>
@@ -19,7 +19,7 @@
   <% @post_comments.each do |comment| %>
     <h4><%= comment.author.name %>: <%= comment.text %></h4> 
  
-  <% if can? :manage, Comment %>
+  <% if can? :destroy, comment %>
   <%= button_to 'Delete Comment', user_post_comment_path(@user.id, @single_post, comment.id), method: :delete, form: {  data: { turbo: :false } }%>
   <% end %>
   <% end %>
