@@ -5,7 +5,7 @@ gem 'rubocop', '>= 1.0', '< 2.0'
 
 ruby '3.1.3'
 
-gem 'cancancan',  '~> 1.9'
+gem 'cancancan', '~> 1.9'
 
 gem 'devise'
 
