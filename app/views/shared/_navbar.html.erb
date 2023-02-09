@@ -13,7 +13,7 @@
         <%= link_to "edit password", edit_user_registration_path, class: "nav_link" %>
         </li>
         <li class="nav_item">
-        <%= button_to "Logout", destroy_user_session_path, method: :delete, class: "nav_link"%>
+        <%= button_to "Logout", destroy_user_session_path, method: :delete,  data: { turbo: false }%>
         </li>
         <% else %>
         <li class="nav_item">
