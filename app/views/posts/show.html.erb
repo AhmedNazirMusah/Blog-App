@@ -9,15 +9,19 @@
   <p>
     <%= @single_post.text %>
   </p>
-  <div class="likes">
-  <%= button_to "Like", like_path(:post_id, :current_user), method: "put"%>
-  </div>
+  <% if can? :destroy, @single_post %>
+  <p><%= button_to 'Delete Post', "/users/#{@user.id}/posts/#{@single_post.id}", method: :delete, form: {  data: { turbo: :false } }%></p>
+  <% end %>
 </div>
 
 <div class="post-comment">
   <h1>comments</h1>
   <% @post_comments.each do |comment| %>
     <h4><%= comment.author.name %>: <%= comment.text %></h4> 
+ 
+  <% if can? :destroy, comment %>
+  <%= button_to 'Delete Comment', user_post_comment_path(@user.id, @single_post, comment.id), method: :delete, form: {  data: { turbo: :false } }%>
+  <% end %>
   <% end %>
 </div>
 <div>

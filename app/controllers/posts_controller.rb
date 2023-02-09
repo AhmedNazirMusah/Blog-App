@@ -1,4 +1,7 @@
 class PostsController < ApplicationController
+  load_and_authorize_resource
+  before_action :authenticate_user!
+
   def index
     @single_user = User.find(params[:user_id].to_i)
     @user_posts = Post.includes(comments: [:author]).where(author: @single_user)
@@ -23,6 +26,15 @@ class PostsController < ApplicationController
 
       render :new, alert: 'An Error occured. Try again'
     end
+  end
+
+  def destroy
+    post = Post.find(params[:id])
+    user = User.find(post.author_id)
+    user.post_counter -= 1
+    post.destroy
+    user.save
+    redirect_to user_path(current_user.id)
   end
 
   private
