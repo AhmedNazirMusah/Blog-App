@@ -10,14 +10,16 @@ Rails.application.routes.draw do
   resources :users, only: [:index, :show] do
     resources :posts, only: [:index, :show, :new, :create, :destroy] do
       resources :comments, only: [:new, :create, :destroy]
-      resources :likes, only: [:new]
+        resources :likes, only: [:new]
+    end
+  end
+
+  namespace :api do 
+    resources :users, only: [:show] do
+      resources :posts, only: [:index] do 
+        resources :comments, only: [:index, :create]
+      end
     end
   end
 end
-  
-#   root "users#index"
-#   get "users/:id" => "users#show"
-#   get "users/:user_id/posts" => "posts#index", as: :users_posts
-#   get "users/:user_id/posts/:id" => "posts#show", as: :users_posts_id
- 
-# end
+
