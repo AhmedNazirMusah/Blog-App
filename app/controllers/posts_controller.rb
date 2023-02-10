@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   load_and_authorize_resource
-  
+
   def index
     @single_user = User.find(params[:user_id].to_i)
     @user_posts = Post.includes(comments: [:author]).where(author: @single_user)
