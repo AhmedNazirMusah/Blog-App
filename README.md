@@ -146,6 +146,11 @@ rspec
 - Twitter: [@ahmednazirmush](https://twitter.com/ahmednazirmusah)
 - LinkedIn: [LinkedIn](https://www.linkedin.com/in/ahmed-nazir-musah-529956214)
 
+👤 **Evans Kupour**
+- GitHub: [@Evans](https://github.com/Doheera-kosi)
+- Twitter: [@KupourE](https://twitter.com/@KupourE)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/evans-kupour-1879421a3/)
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
