@@ -5,6 +5,8 @@ gem 'rubocop', '>= 1.0', '< 2.0'
 
 ruby '3.1.3'
 
+gem 'rswag'
+
 gem 'cancancan', '~> 1.9'
 
 gem 'devise'
@@ -48,6 +50,10 @@ gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', require: false
 
+gem 'rswag-api'
+
+gem 'rswag-ui'
+
 # Use Sass to process CSS
 # gem "sassc-rails"
 
@@ -60,6 +66,7 @@ group :development, :test do
   gem 'debug', platforms: %i[mri mingw x64_mingw]
   gem 'rails-controller-testing'
   gem 'rspec-rails'
+  gem 'rswag-specs'
   gem 'webdrivers'
 end
 
